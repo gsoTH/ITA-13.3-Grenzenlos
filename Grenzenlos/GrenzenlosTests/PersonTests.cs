@@ -1,55 +1,56 @@
 using Grenzenlos;
-namespace GrenzenlosTests;
-
-[TestClass]
-public class PersonTests
+namespace GrenzenlosTests
 {
-    [TestMethod]
-    public void Person_erstellbar()
+    [TestClass]
+    public class PersonTests
     {
-        // Arrange
-        string name = "Max Mustermann";
+        [TestMethod]
+        public void Person_erstellbar()
+        {
+            // Arrange
+            string name = "Max Mustermann";
 
-        // Act
-        Person p = new Person(name);
+            // Act
+            Person p = new Person(name);
 
-        // Assert
-        Assert.AreEqual(name, p.Name);
-        Assert.IsFalse(p.IstVIP);
-        Assert.IsFalse(p.IstKind);
-    }
+            // Assert
+            Assert.AreEqual(name, p.Name);
+            Assert.IsFalse(p.IstVIP);
+            Assert.IsFalse(p.IstKind);
+        }
     
-    [TestMethod]
-    public void Person_erstellbarVIP()
-    {
-        // Arrange
-        string name = "Max Mustermann";
-        bool istVIP = true;
+        [TestMethod]
+        public void Person_erstellbarVIP()
+        {
+            // Arrange
+            string name = "Max Mustermann";
+            bool istVIP = true;
 
-        // Act
-        Person p = new Person(name, istVIP);
+            // Act
+            Person p = new Person(name, istVIP);
 
-        // Assert
-        Assert.AreEqual(name, p.Name);
-        Assert.IsTrue(p.IstVIP);
-        Assert.IsFalse(p.IstKind);
-    }
+            // Assert
+            Assert.AreEqual(name, p.Name);
+            Assert.IsTrue(p.IstVIP);
+            Assert.IsFalse(p.IstKind);
+        }
     
-    [TestMethod]
-    public void Person_erstellbarKind()
-    {
-        // Arrange
-        string name = "Max Mustermann";
-        bool istVIP = true;
-        bool istKind = true;
+        [TestMethod]
+        public void Person_erstellbarKind()
+        {
+            // Arrange
+            string name = "Max Mustermann";
+            bool istVIP = true;
+            bool istKind = true;
 
-        // Act
-        Person p = new Person(name, istVIP, istKind);
+            // Act
+            Person p = new Person(name, istVIP, istKind);
 
-        // Assert
-        Assert.AreEqual(name, p.Name);
-        Assert.IsTrue(p.IstVIP);
-        Assert.IsTrue(p.IstKind);
+            // Assert
+            Assert.AreEqual(name, p.Name);
+            Assert.IsTrue(p.IstVIP);
+            Assert.IsTrue(p.IstKind);
+        }
     }
 }
 

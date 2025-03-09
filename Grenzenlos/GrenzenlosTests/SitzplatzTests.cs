@@ -1,24 +1,25 @@
 using Grenzenlos;
-namespace GrenzenlosTests;
-
-[TestClass]
-public class SitzplatzTests
+namespace GrenzenlosTests
 {
-    [TestMethod]
-    public void Sitzplatz_erstellbar()
+    [TestClass]
+    public class SitzplatzTests
     {
-        // Arrange
-        int reihe = 1;
-        string platz = "A";
+        [TestMethod]
+        public void Sitzplatz_erstellbar()
+        {
+            // Arrange
+            int reihe = 1;
+            string platz = "A";
 
-        // Act
-        Sitzplatz s = new Sitzplatz(reihe, platz);
+            // Act
+            Sitzplatz s = new Sitzplatz(reihe, platz);
 
-        // Assert
-        Assert.AreEqual(reihe, s.Reihe);
-        Assert.AreEqual(platz, s.Platz);
-        Assert.AreEqual("1A", s.Nummer);
-        Assert.IsTrue(s.IstVIP);
-        Assert.IsFalse(s.IstNotausgang);
+            // Assert
+            Assert.AreEqual(reihe, s.Reihe);
+            Assert.AreEqual(platz, s.Platz);
+            Assert.AreEqual("1A", s.Nummer);
+            Assert.IsTrue(s.IstVIP);
+            Assert.IsFalse(s.IstNotausgang);
+        }
     }
 }
